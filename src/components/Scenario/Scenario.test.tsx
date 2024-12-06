@@ -31,7 +31,6 @@ describe('Scenario Component', () => {
       </Scenario>,
     );
 
-    // Open the dialog
     fireEvent.click(screen.getByRole('button', { name: /open scenario/i }));
 
     const dialog = screen.getByTestId('dialog');
@@ -62,7 +61,6 @@ describe('Scenario Component', () => {
       </Scenario>,
     );
 
-    // Open the dialog
     fireEvent.click(screen.getByRole('button', { name: /open scenario/i }));
 
     const dialog = screen.getByTestId('dialog');
@@ -80,7 +78,6 @@ describe('Scenario Component', () => {
       </Scenario>,
     );
 
-    // Open the dialog
     fireEvent.click(screen.getByRole('button', { name: /open scenario/i }));
 
     const dialog = screen.getByTestId('dialog');
