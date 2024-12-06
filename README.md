@@ -283,9 +283,10 @@ As the library evolves, consider revisiting some decisions based on the project'
 3. Run the app (`npm run dev`) and Storybook (`npm run storybook`).
 4. Start building reusable components today!
 
-# After 2.5hrs...
+###### After 2.5hrs...
 - Added in styles (CSS Modules)
 - Consolodated all my notes into this README.md
 - Adding in a few more comments to my code.
-- Fixed the last bug for the test. (3/4 tests were passing).
-  - Simple fix, updated the `aria-label="Close scenario"` for the close button.
+- 3/4 tests were passing, Fixed the last bug for the test. (to make it 4/4 passing)
+  - Updated the `aria-label="Close scenario"` for the close button. (`{ name: /^close scenario$/i }`)
+- Build Storybook as a Static Web App
