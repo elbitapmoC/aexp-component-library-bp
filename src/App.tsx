@@ -4,7 +4,14 @@ import Scenario from './components/Scenario/Scenario';
 function App() {
   return (
     <>
-      <Scenario />
+      <Scenario
+        title="Scenario: In a 🍍 Under the Sea"
+        variant="dark"
+        size="large"
+        disableBackdropClick={false}
+      >
+        <p>🧽 Bob Squarepants</p>
+      </Scenario>
     </>
   );
 }
