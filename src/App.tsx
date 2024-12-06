@@ -1,10 +1,10 @@
 import '../src/styles/App.css';
-import Modal from './components/Modal/Modal';
+import Scenario from './components/Scenario/Scenario';
 
 function App() {
   return (
     <>
-    <Modal/>
+      <Scenario />
     </>
   );
 }
