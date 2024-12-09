@@ -190,7 +190,7 @@ When deadlines are tight, consider the following:
 - **Transition Plan**: Begin with prebuilt libraries and replace them incrementally with custom-built components once requirements stabilize.
 - The plan initially was to use a prebuilt library, but I read, `Build a repository that we could use as a foundation for a component library.`, so I went with the latter.
 
-### 5. **Rollup JS-- Setup and build component libary**
+### 4. **Rollup JS-- Setup and build component libary**
 
 - **The JavaScript module bundler**: Compile small pieces of code into something larger and more complex
 - **Tree-shaking**: Removes unused code, reducing bundle size.
@@ -254,16 +254,21 @@ Building the Scenario (Modal) component was foundational.
 - A reusable and testable Modal (Scenario) component.
 - Well-documented Storybook examples.
 - A scalable repository foundation.
+- Start the foundation to a component library
+- Start creating tests for each component.
+- Build out naming convention, weigh options (BEM, Atomic, Utility-first etc.)
+- Implement accessibility features.
+- Utilize Biome for linting and formatting, replacing ESLint + Prettier.
 
 ---
 
 ### Future Improvements
 
 - Build out component library
-- Build out tests
+- Build out tests for each component.
 - Build out naming convention, weigh options (BEM, Atomic, Utility-first etc.)
 - Build out documentation via storybook (including examples)
-- Build out best practices:
+- Build out more best practices:
   - PR's
   - Code reviews
   - Code organization
@@ -280,6 +285,7 @@ Building the Scenario (Modal) component was foundational.
 - Implement more accessibility (focus trapping, keyboard navigation).
 - Enhance Storybook documentation with complex scenarios.
 - Add a design system for typography, colors, spacing, and shadows.
+- **Utilize CircleCI for continuous integration and deployment.**
 
 As the library evolves, consider revisiting some decisions based on the project's scale, team size, and performance requirements.
 
@@ -292,9 +298,7 @@ As the library evolves, consider revisiting some decisions based on the project'
 4. Start building reusable components today!
 
 ###### After 2.5hrs...
-- Added in styles (CSS Modules)
+- Upgraded from CSS modules to Styled Components
 - Consolodated all my notes into this README.md
-- Adding in a few more comments to my code.
-- 3/4 tests were passing, Fixed the last bug for the test. (to make it 4/4 passing)
-  - Updated the `aria-label="Close scenario"` for the close button. (`{ name: /^close scenario$/i }`)
-- Build Storybook as a Static Web App
+- [Deploy Design System with Vercel](https://aexp-component-library-bp.vercel.app/?path=/story/components-scenario--default)
+
