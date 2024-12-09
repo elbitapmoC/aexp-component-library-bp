@@ -190,7 +190,7 @@ When deadlines are tight, consider the following:
 - **Transition Plan**: Begin with prebuilt libraries and replace them incrementally with custom-built components once requirements stabilize.
 - The plan initially was to use a prebuilt library, but I read, `Build a repository that we could use as a foundation for a component library.`, so I went with the latter.
 
-### 4. **Rollup JS-- Setup and build component libary**
+### 5. **Rollup JS-- Setup and build component libary**
 
 - **The JavaScript module bundler**: Compile small pieces of code into something larger and more complex
 - **Tree-shaking**: Removes unused code, reducing bundle size.
