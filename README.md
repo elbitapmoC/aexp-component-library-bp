@@ -190,6 +190,14 @@ When deadlines are tight, consider the following:
 - **Transition Plan**: Begin with prebuilt libraries and replace them incrementally with custom-built components once requirements stabilize.
 - The plan initially was to use a prebuilt library, but I read, `Build a repository that we could use as a foundation for a component library.`, so I went with the latter.
 
+### 4. **Rollup JS-- Setup and build component libary**
+
+- **The JavaScript module bundler**: Compile small pieces of code into something larger and more complex
+- **Tree-shaking**: Removes unused code, reducing bundle size.
+- **Code-splitting w/o overhead**: Rollup splits code into chunks automatically, like dynamic loading or multiple entry points, and there is a way to explicitly tell Rollup which modules to split into separate chunk
+- **Handles special needs**: With many configuration options and a rich interface to make the ideal bundler for your project.
+- Unopionated, flexible, and extensible.
+- The sauce behind Vite 🌭
 
 ---
 
