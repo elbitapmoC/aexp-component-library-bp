@@ -21,6 +21,9 @@
   "jest": {
     "testEnvironment": "jsdom"
   },
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "babel": {
     "sourceType": "unambiguous",
     "presets": [
