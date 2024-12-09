@@ -9,7 +9,7 @@
     + more
 
 #### Debriefing:
-- Spend no more than 2.5 hours in total on the whole thing.
+- 2.5 hours.. that's all you got!
 - Everything is important.
 - It's better to partially complete both tasks, than fully completing one.
 - Document your code and comment your intentions.
