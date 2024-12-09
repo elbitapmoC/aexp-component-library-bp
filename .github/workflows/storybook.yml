@@ -9,20 +9,25 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
+      # Step 2: Install dependencies
       - name: Install dependencies
         run: npm install
 
+      # Step 3: Set up GitHub token for npm (optional, if you're publishing packages)
       - name: Login to GitHub Pages
-        run: echo "//npm.pkg.github.com/:_authToken=${{secrets.GH_TOKEN}}" >> ~/.npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_TOKEN }}" >> ~/.npmrc
 
+      # Step 4: Build Storybook
       - name: Build Storybook
         run: npm run build-storybook
 
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./storybook-static # Adjust as per your Storybook build output directory
+          publish_dir: ./storybook-static # Adjust based on Storybook build output
