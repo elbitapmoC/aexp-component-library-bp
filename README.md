@@ -183,7 +183,7 @@ _(instrumental in shaping this library)_
 - Avoids runtime overhead associated with CSS-in-JS solutions like `styled-components`.
 - Enables better debugging with tools like browser dev tools.
 
-### 4. **Time-Constrained Scenarios**
+### 4. **Time-Constrained Development**
 
 When deadlines are tight, consider the following:
 - **Prebuilt Libraries**: Tools like TailwindCSS or ShadCDN can provide a quick way to create consistent UIs.
@@ -283,7 +283,7 @@ Building the Modal (Modal) component was foundational.
   - etc.
 - Extend the component library with more patterns.
 - Implement more accessibility (focus trapping, keyboard navigation).
-- Enhance Storybook documentation with complex scenarios.
+- Enhance Storybook documentation with complex Modals.
 - Add a design system for typography, colors, spacing, and shadows.
 - **Utilize CircleCI for continuous integration and deployment.**
 
@@ -300,5 +300,5 @@ As the library evolves, consider revisiting some decisions based on the project'
 ###### After 2.5hrs...
 - Upgraded from CSS modules to Styled Components
 - Consolodated all my notes into this README.md
-- [Deploy Design System with Vercel](https://aexp-component-library-bp.vercel.app/?path=/story/components-scenario--default)
+- [Deploy Design System with Vercel](https://aexp-component-library-bp.vercel.app/?path=/story/components-modal--default)
 
