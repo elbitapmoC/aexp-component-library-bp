@@ -190,7 +190,7 @@ When deadlines are tight, consider the following:
 - **Transition Plan**: Begin with prebuilt libraries and replace them incrementally with custom-built components once requirements stabilize.
 - The plan initially was to use a prebuilt library, but I read, `Build a repository that we could use as a foundation for a component library.`, so I went with the latter.
 
-### 4. **Rollup JS-- Setup and build component libary**
+### 5. **Rollup JS-- Setup and build component libary**
 
 - **The JavaScript module bundler**: Compile small pieces of code into something larger and more complex
 - **Tree-shaking**: Removes unused code, reducing bundle size.
@@ -227,7 +227,7 @@ Fully understood goals and constraints.
 2. Started with Task 2:
 Building the Modal (Modal) component was foundational.
 
-3. Setup the Project:
+3 **Research, Setup, and Planning**: The majority of the time was spent on this.
 
 4. Chose Vite over Next.js for its lightweight setup.
 5. Selected tools:
@@ -251,13 +251,14 @@ Building the Modal (Modal) component was foundational.
 ### Summary
 #####  What I Delivered:
 
-- A reusable and testable Modal (Modal) component.
-- Well-documented Storybook examples.
-- A scalable repository foundation.
-- Start the foundation to a component library
-- Start creating tests for each component.
-- Build out naming convention, weigh options (BEM, Atomic, Utility-first etc.)
-- Implement accessibility features.
+- **MVP**: The most important things to start this component library, not extra features or components for no reason.
+  - A reusable and testable Modal (Modal) component.
+  - Well-documented Storybook examples.
+  - A scalable repository foundation.
+  - Start the foundation to a component library
+  - Start creating tests for each component.
+  - Build out naming convention, weigh options (BEM, Atomic, Utility-first etc.)
+  - Implement accessibility features.
 - Utilize Biome for linting and formatting, replacing ESLint + Prettier.
 
 ---
