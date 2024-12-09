@@ -1,5 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
 # Run tests before commit
-npm run test
+npm run test:ci
 
 # Run build before commit
 npm run build
