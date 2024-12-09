@@ -20,9 +20,7 @@ export const Default: Story = {
   args: {
     title: "Default Modal",
     children: (
-      <p>
-        This is a light scenario(modal) with medium size. Customize as needed!
-      </p>
+      <p>This is a light modal(modal) with medium size. Customize as needed!</p>
     ),
     variant: "light",
     size: "medium",
@@ -34,9 +32,7 @@ export const DarkLarge: Story = {
   args: {
     title: "Dark Large Modal",
     children: (
-      <p>
-        This is a dark scenario(modal) with large size. Customize as needed!
-      </p>
+      <p>This is a dark Modaldal) with large size. Customize as needed!</p>
     ),
     variant: "dark",
     size: "large",
@@ -47,7 +43,7 @@ export const DarkLarge: Story = {
 export const SmallNoBackdropClick: Story = {
   args: {
     title: "Small Modal",
-    children: <p>Backdrop click is disabled for this scenario(modal).</p>,
+    children: <p>Backdrop click is disabled for this Modaldal).</p>,
     variant: "light",
     size: "small",
     disableBackdropClick: true,
