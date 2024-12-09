@@ -296,7 +296,8 @@ As the library evolves, consider revisiting some decisions based on the project'
 1. Clone the repository.
 2. Install dependencies (`npm install`).
 3. Run the app and Storybook (`npm run storybook`).
-4. Start building reusable components today!
+4. Explore the components and their stories in Storybook: [http://localhost:6006](`http://localhost:6006/?path=/story/components-modal--default`).
+5. Start building reusable components today!
 
 ###### After 2.5hrs...
 - Upgraded from CSS modules to Styled Components
