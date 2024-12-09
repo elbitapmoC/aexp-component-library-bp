@@ -17,17 +17,16 @@ const Scenario = ({
   disableBackdropClick = false,
   ...rest
 }: ScenarioProps) => {
+  // Reference to the <dialog> element
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  // State to manage open/close state
   const [isOpen, setIsOpen] = useState(false);
 
+  // Effect to handle Escape key and fixing the body overflow (preventing scroll)
   useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-
     const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeScenario();
-      }
+      if (event.key === "Escape") closeScenario();
     };
 
     if (isOpen) {
@@ -36,21 +35,24 @@ const Scenario = ({
     }
 
     return () => {
-      document.removeEventListener("keydown", handleEscapeKey);
       document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleEscapeKey);
     };
   }, [isOpen]);
 
+  // Open dialog/modal
   const openScenario = () => {
     dialogRef.current?.showModal();
     setIsOpen(true);
   };
 
+  // Close dialog/modal
   const closeScenario = () => {
     dialogRef.current?.close();
     setIsOpen(false);
   };
 
+  // Handle click outside the dialog(background)
   const handleBackdropClick = (event: React.MouseEvent<HTMLDialogElement>) => {
     if (event.target === dialogRef.current && !disableBackdropClick) {
       closeScenario();
@@ -65,17 +67,20 @@ const Scenario = ({
         variant={variant}
         size={size}
         onClick={handleBackdropClick}
+        aria-labelledby="scenario-title"
         {...rest}
       >
         <ScenarioHeader>
-          <h2>{title}</h2>
+          <h2 id="scenario-title">{title}</h2>
         </ScenarioHeader>
         <ScenarioBody>{children}</ScenarioBody>
         <ScenarioFooter>
           <Button onClick={closeScenario}>Close scenario</Button>
         </ScenarioFooter>
       </ScenarioWrapper>
-      <Button onClick={openScenario}>Open Scenario</Button>
+      <Button onClick={openScenario} aria-label="Open Scenario">
+        Open Scenario
+      </Button>
     </>
   );
 };
