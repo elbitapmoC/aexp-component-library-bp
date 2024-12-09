@@ -1,51 +1,51 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import Scenario from ".";
+import Modal from ".";
 
-describe("Scenario Component", () => {
+describe("Modal Component", () => {
   it("renders with the expected elements", () => {
     render(
-      <Scenario
-        title="Test Scenario"
+      <Modal
+        title="Test Modal"
         variant="light"
         size="medium"
         data-testid="dialog"
       >
-        <p>Scenario content</p>
-      </Scenario>,
+        <p>Modal content</p>
+      </Modal>,
     );
 
     // Check if the open button is rendered
     expect(
-      screen.getByRole("button", { name: /open scenario/i }),
+      screen.getByRole("button", { name: /open modal/i }),
     ).toBeInTheDocument();
 
     // Open the dialog
-    fireEvent.click(screen.getByRole("button", { name: /open scenario/i }));
+    fireEvent.click(screen.getByRole("button", { name: /open modal/i }));
 
     const dialog = screen.getByTestId("dialog");
     expect(dialog).toBeInTheDocument();
     expect(dialog).toHaveAttribute("open");
-    expect(screen.getByText(/test scenario/i)).toBeInTheDocument();
+    expect(screen.getByText(/test modal/i)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /^close scenario$/i }),
+      screen.getByRole("button", { name: /^close modal$/i }),
     ).toBeInTheDocument();
   });
 
   it("closes when Escape key is pressed", async () => {
     render(
-      <Scenario
-        title="Test Scenario"
+      <Modal
+        title="Test Modal"
         variant="light"
         size="medium"
         data-testid="dialog"
       >
-        <p>Scenario content</p>
-      </Scenario>,
+        <p>Modal content</p>
+      </Modal>,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /open scenario/i }));
+    fireEvent.click(screen.getByRole("button", { name: /open modal/i }));
 
     const dialog = screen.getByTestId("dialog");
     expect(dialog).toHaveAttribute("open");
@@ -64,18 +64,18 @@ describe("Scenario Component", () => {
 
   it("closes when clicking outside the dialog", () => {
     render(
-      <Scenario
-        title="Test Scenario"
+      <Modal
+        title="Test Modal"
         variant="light"
         size="medium"
         disableBackdropClick={false}
         data-testid="dialog"
       >
-        <p>Scenario content</p>
-      </Scenario>,
+        <p>Modal content</p>
+      </Modal>,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /open scenario/i }));
+    fireEvent.click(screen.getByRole("button", { name: /open modal/i }));
 
     const dialog = screen.getByTestId("dialog");
     expect(dialog).toHaveAttribute("open");
@@ -87,17 +87,17 @@ describe("Scenario Component", () => {
 
   it("does not close when clicking inside the dialog", () => {
     render(
-      <Scenario
-        title="Test Scenario"
+      <Modal
+        title="Test Modal"
         variant="light"
         size="medium"
         data-testid="dialog"
       >
-        <p data-testid="inside">Scenario content</p>
-      </Scenario>,
+        <p data-testid="inside">Modal content</p>
+      </Modal>,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /open scenario/i }));
+    fireEvent.click(screen.getByRole("button", { name: /open modal/i }));
 
     const dialog = screen.getByTestId("dialog");
     expect(dialog).toHaveAttribute("open");

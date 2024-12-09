@@ -2,21 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import {
   Button,
   GlobalStyles,
-  ScenarioBody,
-  ScenarioFooter,
-  ScenarioHeader,
-  ScenarioWrapper,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalWrapper,
 } from "./styled";
-import type { ScenarioProps } from "./types";
+import type { ModalProps } from "./types";
 
-const Scenario = ({
+const Modal = ({
   title,
   children,
   variant = "light",
   size = "medium",
   disableBackdropClick = false,
   ...rest
-}: ScenarioProps) => {
+}: ModalProps) => {
   // Reference to the <dialog> element
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -26,7 +26,7 @@ const Scenario = ({
   // Effect to handle Escape key and fixing the body overflow (preventing scroll)
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeScenario();
+      if (event.key === "Escape") closeModal();
     };
 
     if (isOpen) {
@@ -41,13 +41,13 @@ const Scenario = ({
   }, [isOpen]);
 
   // Open dialog/modal
-  const openScenario = () => {
+  const openModal = () => {
     dialogRef.current?.showModal();
     setIsOpen(true);
   };
 
   // Close dialog/modal
-  const closeScenario = () => {
+  const closeModal = () => {
     dialogRef.current?.close();
     setIsOpen(false);
   };
@@ -55,34 +55,34 @@ const Scenario = ({
   // Handle click outside the dialog(background)
   const handleBackdropClick = (event: React.MouseEvent<HTMLDialogElement>) => {
     if (event.target === dialogRef.current && !disableBackdropClick) {
-      closeScenario();
+      closeModal();
     }
   };
 
   return (
     <>
       <GlobalStyles />
-      <ScenarioWrapper
+      <ModalWrapper
         ref={dialogRef}
         variant={variant}
         size={size}
         onClick={handleBackdropClick}
-        aria-labelledby="scenario-title"
+        aria-labelledby="modal-title"
         {...rest}
       >
-        <ScenarioHeader>
-          <h2 id="scenario-title">{title}</h2>
-        </ScenarioHeader>
-        <ScenarioBody>{children}</ScenarioBody>
-        <ScenarioFooter>
-          <Button onClick={closeScenario}>Close scenario</Button>
-        </ScenarioFooter>
-      </ScenarioWrapper>
-      <Button onClick={openScenario} aria-label="Open Scenario">
-        Open Scenario
+        <ModalHeader>
+          <h2 id="modal-title">{title}</h2>
+        </ModalHeader>
+        <ModalBody>{children}</ModalBody>
+        <ModalFooter>
+          <Button onClick={closeModal}>Close modal</Button>
+        </ModalFooter>
+      </ModalWrapper>
+      <Button onClick={openModal} aria-label="Open Modal">
+        Open Modal
       </Button>
     </>
   );
 };
 
-export default Scenario;
+export default Modal;

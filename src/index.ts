@@ -1,1 +1,1 @@
-export { default as Scenario } from "./components/Scenario";
+export { default as Modal } from "./components/Modal";

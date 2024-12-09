@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Scenario from ".";
+import Modal from ".";
 
-const meta: Meta<typeof Scenario> = {
-  title: "Components/Scenario",
-  component: Scenario,
+const meta: Meta<typeof Modal> = {
+  title: "Components/Modal",
+  component: Modal,
   argTypes: {
     title: { control: "text" },
     variant: { control: "radio", options: ["light", "dark"] },
@@ -14,11 +14,11 @@ const meta: Meta<typeof Scenario> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Scenario>;
+type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   args: {
-    title: "Default Scenario",
+    title: "Default Modal",
     children: (
       <p>
         This is a light scenario(modal) with medium size. Customize as needed!
@@ -32,7 +32,7 @@ export const Default: Story = {
 
 export const DarkLarge: Story = {
   args: {
-    title: "Dark Large Scenario",
+    title: "Dark Large Modal",
     children: (
       <p>
         This is a dark scenario(modal) with large size. Customize as needed!
@@ -46,7 +46,7 @@ export const DarkLarge: Story = {
 
 export const SmallNoBackdropClick: Story = {
   args: {
-    title: "Small Scenario",
+    title: "Small Modal",
     children: <p>Backdrop click is disabled for this scenario(modal).</p>,
     variant: "light",
     size: "small",

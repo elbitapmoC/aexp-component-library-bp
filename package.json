@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "dev": "vitest",
+    "dev": "vite",
     "test:watch": "vitest --watch",
     "test:ci": "vitest --run",
     "storybook": "storybook dev -p 6006",

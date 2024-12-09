@@ -70,7 +70,7 @@ describe("Modal", () => {
   });
 
   test("renders modal with expected controls", () => {
-    render(<Scenario />);
+    render(<Modal />);
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(screen.getByRole("heading")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /close/i })).toBeInTheDocument();
@@ -78,7 +78,7 @@ describe("Modal", () => {
 
   describe("when passed onClose handler", () => {
     test("calls onClose action when pressing the ESC key", () => {
-      render(<Scenario onClose={mockClose} />);
+      render(<Modal onClose={mockClose} />);
       fireEvent.keyDown(screen.getByRole("dialog"), {
         key: "Escape",
         code: "Escape",
@@ -87,7 +87,7 @@ describe("Modal", () => {
     });
 
     test("renders dismissible button that calls onClose action when clicked", async () => {
-      const { user } = renderWithUser(<Scenario onClose={mockClose} />);
+      const { user } = renderWithUser(<Modal onClose={mockClose} />);
       const closeButton = screen.getByRole("button", { name: /close/i });
       await user.click(closeButton);
       expect(mockClose).toHaveBeenCalledTimes(1);
@@ -95,7 +95,7 @@ describe("Modal", () => {
 
     test("calls onClock action when clicking outside of the modal", async () => {
       const { user } = renderWithUser(
-        <Scenario data-testid="mockId" onClose={mockClose} />
+        <Modal data-testid="mockId" onClose={mockClose} />
       );
       const scrimElement = screen.getByTestId("mockId");
       await user.click(scrimElement);
@@ -225,7 +225,7 @@ When deadlines are tight, consider the following:
 Fully understood goals and constraints.
 
 2. Started with Task 2:
-Building the Scenario (Modal) component was foundational.
+Building the Modal (Modal) component was foundational.
 
 3. Setup the Project:
 
@@ -236,7 +236,7 @@ Building the Scenario (Modal) component was foundational.
 - React Testing Library
 - TypeScript
 - Storybook
-- Built the Scenario Component:
+- Built the Modal Component:
   - Utilized HTML <dialog> for simplicity and semantics.
   - Designed props (`variant`, `size`, `disableBackdropClick`) for flexibility.
 - Documented with Storybook:
@@ -251,7 +251,7 @@ Building the Scenario (Modal) component was foundational.
 ### Summary
 #####  What I Delivered:
 
-- A reusable and testable Modal (Scenario) component.
+- A reusable and testable Modal (Modal) component.
 - Well-documented Storybook examples.
 - A scalable repository foundation.
 - Start the foundation to a component library

@@ -2,11 +2,11 @@ import styled, { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    --scenario-light-bg: #fff;
-    --scenario-dark-bg: #1a1a1a;
-    --scenario-light-color: #000;
-    --scenario-dark-color: #fff;
-    --scenario-backdrop: rgba(126, 126, 126, 0.5);
+    --modal-light-bg: #fff;
+    --modal-dark-bg: #1a1a1a;
+    --modal-light-color: #000;
+    --modal-dark-color: #fff;
+    --modal-backdrop: rgba(126, 126, 126, 0.5);
 
     /* Button Variables */
     --button-border-radius: 4px;
@@ -20,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   dialog::backdrop {
-    background: var(--scenario-backdrop);
+    background: var(--modal-backdrop);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(1.5px);
   }
@@ -31,16 +31,16 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 const lightTheme = css`
-  background-color: var(--scenario-light-bg);
-  color: var(--scenario-light-color);
+  background-color: var(--modal-light-bg);
+  color: var(--modal-light-color);
 `;
 
 const darkTheme = css`
-  background-color: var(--scenario-dark-bg);
-  color: var(--scenario-dark-color);
+  background-color: var(--modal-dark-bg);
+  color: var(--modal-dark-color);
 `;
 
-export const ScenarioWrapper = styled.dialog<{
+export const ModalWrapper = styled.dialog<{
   variant: "light" | "dark";
   size: string;
 }>`
@@ -53,7 +53,7 @@ export const ScenarioWrapper = styled.dialog<{
         : "width: 800px;"};
 `;
 
-export const ScenarioHeader = styled.header`
+export const ModalHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,13 +66,13 @@ export const ScenarioHeader = styled.header`
   }
 `;
 
-export const ScenarioBody = styled.main`
+export const ModalBody = styled.main`
   margin: 1rem 0;
   font-size: 1rem;
   line-height: 1.5;
 `;
 
-export const ScenarioFooter = styled.footer`
+export const ModalFooter = styled.footer`
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
