@@ -15,7 +15,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
-    "release": "standard-version"
+    "release": "standard-version",
+    "deploy-storybook": "npm run build-storybook && vercel deploy --prod storybook-static"
   },
   "jest": {
     "testEnvironment": "jsdom"
