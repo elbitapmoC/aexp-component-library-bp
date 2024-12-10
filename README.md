@@ -26,7 +26,7 @@ Core Tech:
 - Vitest
 
 Approach:
-  1. Research **Reusable Component Library**:
+  1. Research **Reusable Component Library & Architectural Patterns**:
       - A curated set of modular, testable, and composable React components designed to boost development speed and ensure a consistent user interface across multiple projects. This guide provides a structured approach for building, maintaining, and scaling a component library.
   2. Start with a simple, reusable component.
   3. Look at existing component libraries, utility componants & finding similarities
@@ -40,14 +40,21 @@ Approach:
       - **Spinners**: Indicates loading states.
   - Best practices:
     - **Keep Components Small and Focused**
-    - **Single Responsibility Principle (SRP)**: Easier to reuse, debug, and test.
+    - **Separation of Concerns**: Decouples logic, styles, and components to improve readability and maintainability.
+      In our `Modal` component we're:
+        - Component logic resides in the component file (e.g., Modal handles state and event listeners).
+        - Styles are isolated in `styled.ts`.
+        - Types are organized in `types.ts`.
+    - **Single Responsibility Principle (SRP)**: Each component focuses on a specific task, making it easier to reuse, debug, and test.
     - **Embrace Component Composition**: Smaller components can be combined to create more complex components.
-      - **Example**: A `Card` component can include:
-        - `CardHeader`
-        - `CardBody`
-        - `CardFooter`
-    - **Flexibility Through Props**: Allows custom behavior and styling via well-defined props.
-    - Avoid hardcoding styles; instead, use class names or utility-first CSS (e.g., TailwindCSS).
+      - **Example**: A Card component can include:
+        - CardHeader
+        - CardBody
+        - CardFooter
+    - **Flexibility Through Props**: Allows customization without needing to rewrite components.
+    In our `Modal` component we're:
+      - `Variant` enables theme switching (e.g., light, dark).
+      - `size` adjusts modal dimensions (e.g., small, medium, large).
     - Use **`React.ComponentProps`** to inherit standard attributes.
 - Document:
   - Create usage examples, prop tables, and guidelines for each component.
@@ -183,6 +190,17 @@ _(instrumental in shaping this library)_
 - Avoids runtime overhead associated with CSS-in-JS solutions like `styled-components`.
 - Enables better debugging with tools like browser dev tools.
 
+### 3.1 Styled Components vs. CSS Modules
+**Why CSS Styled Components?**
+- Styled-components allow for CSS-in-JS, keeping styles scoped to specific components.
+
+Benefits:
+- Prevents global namespace pollution.
+- Dynamically applies styles based on props (e.g., variant, size).
+- Removes the need for class name conventions like BEM.
+
+**_(This 3.1 section was added after 2.5hr)_**
+
 ### 4. **Time-Constrained Development**
 
 When deadlines are tight, consider the following:
@@ -192,12 +210,13 @@ When deadlines are tight, consider the following:
 
 ### 5. **Rollup JS-- Setup and build component libary**
 
+**Why Rollup?** Its optimized for building libraries, offering a smaller and more efficient bundle compared to Webpack.
 - **The JavaScript module bundler**: Compile small pieces of code into something larger and more complex
 - **Tree-shaking**: Removes unused code, reducing bundle size.
 - **Code-splitting w/o overhead**: Rollup splits code into chunks automatically, like dynamic loading or multiple entry points, and there is a way to explicitly tell Rollup which modules to split into separate chunk
 - **Handles special needs**: With many configuration options and a rich interface to make the ideal bundler for your project.
 - Unopionated, flexible, and extensible.
-- The sauce behind Vite 🌭
+- Much like a 🌭, it's easily configurable for modern library needs.
 
 ---
 
@@ -227,9 +246,9 @@ Fully understood goals and constraints.
 2. Started with Task 2:
 Building the Modal (Modal) component was foundational.
 
-3 **Research, Setup, and Planning**: The majority of the time was spent on this.
+3. **Research, Setup, and Planning**: The majority of the time was spent on this.
 
-4. Chose Vite over Next.js for its lightweight setup.
+4. Chose Vite over other options (CRA, T3, Next, etc.) for its lightweight setup.
 5. Selected tools:
 - React
 - Vitest
@@ -260,6 +279,10 @@ Building the Modal (Modal) component was foundational.
   - Build out naming convention, weigh options (BEM, Atomic, Utility-first etc.)
   - Implement accessibility features.
 - Utilize Biome for linting and formatting, replacing ESLint + Prettier.
+- Build out best practices:
+  - PR's (husky, commitlint, commitizen)
+  - Tests ran upon commits.
+  - Useful plugins
 
 ---
 
@@ -270,10 +293,8 @@ Building the Modal (Modal) component was foundational.
 - Build out naming convention, weigh options (BEM, Atomic, Utility-first etc.)
 - Build out documentation via storybook (including examples)
 - Build out more best practices:
-  - PR's
   - Code reviews
   - Code organization
-  - Useful plugins
 - Update library with a Design System
   - Layouts
   - Typography
@@ -301,6 +322,6 @@ As the library evolves, consider revisiting some decisions based on the project'
 
 ###### After 2.5hrs...
 - Upgraded from CSS modules to Styled Components
-- Consolodated all my notes into this README.md
-- [Deploy Design System with Vercel](https://aexp-component-library-bp.vercel.app/?path=/story/components-modal--default)
+- Consolodated and refined my notes into this README file.
+- [Deploy Storybook Design System with Vercel](https://aexp-component-library-bp.vercel.app/?path=/story/components-modal--default)
 
