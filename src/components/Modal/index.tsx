@@ -17,7 +17,8 @@ const Modal = ({
   disableBackdropClick = false,
   ...rest
 }: ModalProps) => {
-  // Reference to the <dialog> element
+  // Reference to the <dialog> element and provides access to it's methods like showModal & close.
+  // Handles user interactionns w/o causing re-renders.
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   // State to manage open/close state
